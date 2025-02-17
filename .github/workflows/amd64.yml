@@ -24,6 +24,7 @@ jobs:
       run: |
         pwd
         df -h
+        docker info
         images="${{ github.event.inputs.docker_images }}"
         IFS=',' read -r -a image_array <<< "$images"
         for image in "${image_array[@]}"; do
