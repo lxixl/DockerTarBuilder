@@ -23,7 +23,8 @@ jobs:
     - name: Pull Docker Images and Package
       run: |
         pwd
-        df -ih
+        df -h
+        rm -rf /var/lib/docker/tmp/*
         docker info
         images="${{ github.event.inputs.docker_images }}"
         IFS=',' read -r -a image_array <<< "$images"
