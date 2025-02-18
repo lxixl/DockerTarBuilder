@@ -22,8 +22,8 @@ jobs:
 
     - name: Pull Docker Images and Package
       run: |
-        docker system prune --all --force --volumes
-        systemctl restart docker
+        # docker system prune --all --force --volumes
+        # systemctl restart docker
         pwd
         df -h
         # df -hl /home/runner/work/DockerTarBuilder/DockerTarBuilder
