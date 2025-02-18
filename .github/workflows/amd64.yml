@@ -27,7 +27,7 @@ jobs:
         pwd
         df -h
         cd /
-        sudo du -h | grep G
+        sudo du -h | grep G
         # sudo du -ah / --max-depth=1
         # sudo du -ah ./ --max-depth=1
         # sudo du -ah /var/lib/docker --max-depth=1
