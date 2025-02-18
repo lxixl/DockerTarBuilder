@@ -26,8 +26,8 @@ jobs:
         # systemctl restart docker
         pwd
         df -h
-        du -ah --max-deepth=1
-        du -ah /var/lib/docker --max-deepth=1
+        du -ah ./ --max-depth=1
+        du -ah /var/lib/docker --max-depth=1
         # df -hl /var/lib/docker
         # df -hl /home/runner/work/DockerTarBuilder/DockerTarBuilder
         # sudo rm -rf /var/lib/docker/tmp/*
