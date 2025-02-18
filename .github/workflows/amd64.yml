@@ -27,7 +27,7 @@ jobs:
         pwd
         df -h
         cd /
-        sudo du -h | grep G
+        # sudo du -h | grep G
         # sudo du -ah / --max-depth=1
         # sudo du -ah ./ --max-depth=1
         # sudo du -ah /var/lib/docker --max-depth=1
@@ -37,11 +37,11 @@ jobs:
         # docker info
         # docker volume ls
         # docker images -a
-        # images="${{ github.event.inputs.docker_images }}"
-        # IFS=',' read -r -a image_array <<< "$images"
-        # for image in "${image_array[@]}"; do
-          # docker pull "${image}" --platform "linux/amd64"
-          # docker save "${image}" -o "${image//\//_}-amd64.tar"
+        images="${{ github.event.inputs.docker_images }}"
+        IFS=',' read -r -a image_array <<< "$images"
+        for image in "${image_array[@]}"; do
+          docker pull "${image}" --platform "linux/amd64"
+          docker save "${image}" -o "${image//\//_}-amd64.tar"
         done
 
     - name: Compress the TAR files
