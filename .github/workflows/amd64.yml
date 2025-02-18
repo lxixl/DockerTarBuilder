@@ -25,7 +25,7 @@ jobs:
         # systemctl restart docker
         pwd
         df -h
-        df -hl /home/runner/work/DockerTarBuilder/DockerTarBuilder
+        # df -hl /home/runner/work/DockerTarBuilder/DockerTarBuilder
         # sudo rm -rf /var/lib/docker/tmp/*
         docker info
         images="${{ github.event.inputs.docker_images }}"
